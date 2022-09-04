@@ -17,13 +17,15 @@ class Routing
     public function run()
     {
         #region Check Exist Class
-        $path = realpath(dirname(__FILE__) . "../../application/controllers/"
+
+        $path = realpath(dirname(__FILE__) . "/../../application/controllers/" 
             . $this->current_route[0] . ".php");
 
         if (!file_exists($path)) {
             echo "404 - FILE NOT EXIST !";
             exit;
         }
+        require_once($path);
 
         # Check Method in URL
         sizeof($this->current_route) == 1 ? $method = "index" : $method = $this->current_route[1];
