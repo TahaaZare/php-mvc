@@ -47,7 +47,7 @@ class Model
             } else {
                 //query
                 $stmt = $this->connection->prepare($query);
-                $stmt . execute($values);
+                $stmt -> execute($values);
                 return $stmt;
             }
         } catch (PDOException $e) {
