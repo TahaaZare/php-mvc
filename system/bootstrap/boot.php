@@ -1,6 +1,7 @@
 <?php
 
+use System\Router\Routing;
 
 require('system/config.php');
-$router = new system\Router\Routing();
+$router = new Routing();
 $router->run();
