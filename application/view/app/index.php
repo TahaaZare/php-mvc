@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Page In View</title>
-</head>
-<body>
-    <h1>This Index View</h1>
-    <p>
-        Product : <?php  echo $product; ?>
-    </p>
-</body>
-</html>
+<section class="container my-5">
+    <!-- Example row of columns -->
+    <section class="row">
+        <section class="col-md-4">
+            <h2 style="font-size: 1.2rem; font-weight: bold;">
+                title</h2>
+            <p>description</p>
+            <p><a class="btn btn-primary" href="url" role="button">View details »</a></p>
+        </section>
+    </section>
+</section>
