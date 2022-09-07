@@ -2,18 +2,18 @@
 
 namespace Application\Controllers;
 
-class Home extends Controller
+class Article extends Controller
 {
 
     public function index()
     {
     }
 
-    public function category($id)
+    public function create()
     {
     }
 
-    public function show($id)
+    public function edit($id)
     {
     }
 }
