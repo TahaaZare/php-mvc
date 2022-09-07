@@ -12,7 +12,27 @@ class Category extends Controller
     {
     }
 
+    public function store()
+    {
+    }
+
+    public function show($id)
+    {
+        
+    }
+
     public function edit($id)
     {
+        
+    }
+
+    public function update($id)
+    {
+        
+    }
+
+    public function delete($id)
+    {
+        
     }
 }
