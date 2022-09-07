@@ -1,3 +1,4 @@
+<?= $this->include('app.layouts.header') ?>
 <section class="container my-5">
     <!-- Example row of columns -->
     <section class="row">
@@ -9,3 +10,5 @@
         </section>
     </section>
 </section>
+
+<?= $this->include('app.layouts.footer') ?>

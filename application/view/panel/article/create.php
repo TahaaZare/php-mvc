@@ -1,3 +1,5 @@
+<?php $this->include('panel.layouts.header') ?>
+
 <form action="action" method="post">
     <section class="form-group">
         <label for="title">Title</label>
@@ -15,4 +17,5 @@
     </section>
     <button type="submit" class="btn btn-primary">Create</button>
 </form>
+
 <?php $this->include("panel.layouts.footer"); ?>
