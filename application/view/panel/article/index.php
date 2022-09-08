@@ -23,7 +23,7 @@
                     <td><?php echo $article['id']; ?></td>
                     <td><?php echo $article['title']; ?></td>
                     <td><?php echo $article['cat_id']; ?></td>
-                    <td><?php echo substr($article['body'], 0, 10) . '. . .'; ?>></td>
+                    <td><?php echo substr($article['body'], 0, 10) . ' . . .'; ?></td>
                     <td>
                         <a href="<?= $this->url('article/edit/' . $article['id']); ?>" class="btn btn-info btn-sm">Edit</a>
                         <a href="<?= $this->url('article/delete/' . $article['id']); ?> class=" btn btn-danger btn-sm">Delete</a>
