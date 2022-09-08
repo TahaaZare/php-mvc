@@ -1,7 +1,8 @@
 <?php $this->include('panel.layouts.header') ?>
+
 <section class="mb-2 d-flex justify-content-between align-items-center">
     <h2 class="h4">Articles</h2>
-    <a href="url" class="btn btn-sm btn-success">Create</a>
+    <a href="<?= $this->url('article/create'); ?>" target="_blank" class="btn btn-sm btn-success">Create</a>
 </section>
 
 <section class="table-responsive">
@@ -16,16 +17,19 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>id</td>
-                <td>title</td>
-                <td>cat_id</td>
-                <td>body></td>
-                <td>
-                    <a href="url" class="btn btn-info btn-sm">Edit</a>
-                    <a href="url class=" btn btn-danger btn-sm">Delete</a>
-                </td>
-            </tr>
+            <?php foreach ($articles as $article) {
+            ?>
+                <tr>
+                    <td><?php echo $article['id']; ?></td>
+                    <td><?php echo $article['title']; ?></td>
+                    <td><?php echo $article['cat_id']; ?></td>
+                    <td><?php echo substr($article['body'], 0, 10) . '. . .'; ?>></td>
+                    <td>
+                        <a href="<?= $this->url('article/edit/' . $article['id']); ?>" class="btn btn-info btn-sm">Edit</a>
+                        <a href="<?= $this->url('article/delete/' . $article['id']); ?> class=" btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            <?php } ?>
         </tbody>
     </table>
 </section>

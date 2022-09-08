@@ -8,7 +8,7 @@ $current_route = str_replace($base_dir, '', $tmp[0]);
 unset($tem);
 
 $dbHost = "localhost";
-$dbName = "php_mvc";
+$dbName = "mvc_blog";
 $dbUserName = "root";
 $dbPassoword = "";
 
