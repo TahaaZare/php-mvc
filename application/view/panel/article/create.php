@@ -1,6 +1,6 @@
-<?php $this->include('panel.layouts.header') ?>
+<?php $this->include("panel.layouts.header"); ?>
 
-<form action="<?= $this->url('article/store') ?>" method="post">
+<form action="<?php $this->url('article/store'); ?>" method="post">
     <section class="form-group">
         <label for="title">Title</label>
         <input type="text" class="form-control" id="title" name="title" placeholder="title ...">
@@ -9,8 +9,9 @@
         <label for="cat_id">Category</label>
         <select class="form-control" id="cat_id" name="cat_id">
             <?php foreach ($categories as $category) { ?>
-                <option value="<?= $category['id'] ?>"><?php echo $category['name']; ?></option>
+                <option value="<?php echo $category['id'] ?>"><?php echo $category['name'] ?></option>
             <?php } ?>
+
         </select>
     </section>
     <section class="form-group">

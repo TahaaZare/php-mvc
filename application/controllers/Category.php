@@ -10,7 +10,7 @@ class Category extends Controller
     {
         $category = new CategoryModel();
         $categories = $category->all();
-        return $this->view('panel.category.index',compact('categories'));
+        return $this->view('panel.category.index', compact('categories'));
     }
 
     public function create()
@@ -22,29 +22,32 @@ class Category extends Controller
     {
         $category = new CategoryModel();
         $category->insert($_POST);
-        return $this->redirect('panel.category.index');
+        return $this->redirect('category');
+    }
+
+    public function show($id)
+    {
+        return $this->view('panel.category.show');
     }
 
     public function edit($id)
     {
-
-        $category = new CategoryModel();
-        $new_category = $category->find($id);
-
-        return $this->view('panel.category.edit', compact('new_category'));
+        $ob_category = new CategoryModel();
+        $category = $ob_category->find($id);
+        return $this->view('panel.category.edit', compact('category'));
     }
 
     public function update($id)
     {
         $category = new CategoryModel();
         $category->update($id, $_POST);
-        return $this->redirect('panel.category.index');
+        return $this->redirect('category');
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
         $category = new CategoryModel();
         $category->delete($id);
-        return $this->redirect('panel.category.index');
+        return $this->back();
     }
 }

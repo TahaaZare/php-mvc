@@ -1,23 +1,21 @@
 <?php
-
 namespace System\Traits;
 
 trait Redirect
 {
     protected function redirect($url)
     {
-        $protocol = stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https//' : 'http://';
-        header("Location: {$protocol}{$_SERVER['HTTP_HOST']}/php-mvc/$url");
+        $protocol = stripos($_SERVER['SERVER_PROTOCOL'], 'https')=== true ? 'https://' : 'http://';
+        header("Location: ".$protocol.$_SERVER['HTTP_HOST']."/mvc/".$url);
     }
-
-    protected function redirectBack()
+    
+    protected function back()
     {
-        $http_referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
+        $http_referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER["HTTP_REFERER"] : null;
         if ($http_referer != null) {
-            header("Location: {$_SERVER['HTTP_REFERER']}");
+            header("Location: ".$_SERVER['HTTP_REFERER']);
         } else {
-            echo 'ROUTE NOT DEFINE !';
+            echo "route not found";
         }
-        
     }
 }

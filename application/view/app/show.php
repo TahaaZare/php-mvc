@@ -1,19 +1,20 @@
-<?= $this->include('app.layouts.header') ?>
+<?php $this->include("app.layouts.header", ['categories' => $categories]); ?>
+    <section class="container my-5">
+        <!-- Example row of columns -->
+        <section class="row">
+            <section class="col-md-12">
+                <h1><?php echo  $article['title'] ?></h1>
+                <h5 class="d-flex justify-content-between align-items-center">
+                    <a href="<?php echo $this->url('home/category/'.$article['cat_id']); ?>"><?php echo  $article['category'] ?></a>
+                    <span class="date-time"><?php echo  $article['created_at'] ?></span>
+                </h5>
+                <article class="bg-article p-3">
+                    <p>
+                    <?php echo  $article['body'] ?>
+                    </p>
 
-<section class="container my-5">
-    <!-- Example row of columns -->
-    <section class="row">
-        <section class="col-md-12">
-            <h1>titel</h1>
-            <h5 class="d-flex justify-content-between align-items-center">
-                <a href="url">category</a>
-                <span class="date-time">created_at</span>
-            </h5>
-            <article class="bg-article p-3">
-                description
-            </article>
+                </article>
+            </section>
         </section>
     </section>
-</section>
-
-<?= $this->include('app.layouts.footer') ?>
+    <?php $this->include("app.layouts.footer"); ?>

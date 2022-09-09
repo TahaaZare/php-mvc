@@ -3,11 +3,11 @@
 namespace Application\Controllers;
 
 use Application\Model\Article as ArticleModel;
-use Application\Model\Category as CategoryModel;
+use Application\Model\Category;
+
 
 class Article extends Controller
 {
-
     public function index()
     {
         $article = new ArticleModel();
@@ -17,40 +17,42 @@ class Article extends Controller
 
     public function create()
     {
-        $category = new CategoryModel();
+        $category = new Category();
         $categories = $category->all();
         return $this->view('panel.article.create', compact('categories'));
     }
 
     public function store()
-    {
+    { 
         $article = new ArticleModel();
         $article->insert($_POST);
-        return $this->redirect('panel.article.index');
+        return $this->redirect('article');
     }
 
+    public function show($id)
+    { }
+
     public function edit($id)
-    {
-        $article = new ArticleModel();
-        $new_article = $article->find($id);
-
-        $category = new CategoryModel();
+    { 
+        $category = new Category();
         $categories = $category->all();
-
-        return $this->view('panel.article.edit', compact('new_article', 'categories'));
+        $ob_article = new ArticleModel();
+        $article = $ob_article->find($id);
+        return $this->view('panel.article.edit', compact('categories', 'article'));
     }
 
     public function update($id)
-    {
+    { 
+
         $article = new ArticleModel();
         $article->update($id, $_POST);
-        return $this->redirect('panel.article.index');
+        return $this->redirect('article');
     }
 
-    public function delete($id)
-    {
+    public function destroy($id)
+    { 
         $article = new ArticleModel();
         $article->delete($id);
-        return $this->redirect('panel.article.index');
+        return $this->back();
     }
 }
